@@ -23,21 +23,21 @@ function About() {
         </ScrollAnimation>
           <div className="AboutBio">
             <ScrollAnimation animateIn="fadeInLeft">
-            Hello! My name is <strong>Muhammad Daffa Riandhika</strong>, and I’m from Indonesia. For the past three years, I've been pursuing my passion for technology at Gunadarma University, where I’m majoring in Informatics Systems program. Throughout my journey, I’ve gained valuable experience, exploring various aspects of the field, which has not only sharpened my technical skills but also deepened my understanding of how technology works.
+            Halo! saya <strong>Muhammad Daffa Riandhika</strong>, Saya berasal dari Indonesia. Selama tiga tahun terakhir, Selain antusias dalam bidang teknologi, saya juga tertarik dalam dunia seni, khususnya musik dan menggambar. Gabungan antara teknologi dan seni selalu memberi saya perspektif yang segar dan inovatif dalam menghadapi tantangan di dunia digital.
             </ScrollAnimation>
 
             <br /><br />
             
             <ScrollAnimation animateIn="fadeInLeft">
-            My passion for problem-solving led me to pursue a degree in Informatics Systems at Gunadarma University. One of my proudest moments was winning <strong>1st place</strong> in the <strong>USB scientific article competition</strong> during my first year, which solidified my dedication to learning and innovation.
+            Rasa ingin tahu saya tetang teknologi membawa saya untuk memilih Sistem Informasi sebagai bidang studi di Universitas Gunadarma. Salah satu momen paling membanggakan saya adalah meraih juara 1 dalam kompetisi artikel ilmiah USB di tahun pertama saya.
             </ScrollAnimation>
 
             <br /><br />
 
             <ScrollAnimation animateIn="fadeInLeft">
-            My web development journey has been exciting, especially diving into the MERN stack, which helped me build modern web applications. I also challenged myself in a Python Code Jam 2023 on Discord, sharpening my problem-solving skills under pressure. Additionally, contributing to open-source projects has enhanced my coding and taught me the value of collaboration in the developer community.
+            Saya tertarik dalam pengembangan web, terutama ketika mempelajari HTML, Javascript dan CSS, Sampai saat ini saya terus mengasah kemampuan ini. Selain itu, sesekali saya ikut dalam kontribusi pada proyek open-source agar dapat meningkatkan kemampuan coding dan mengajarkan nilai kolaborasi dalam komunitas developer dalam diri saya.
               <div className="tagline2">
-                Here is some of my skill:
+                Soft Skill:
               </div>
             </ScrollAnimation>
             

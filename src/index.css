@@ -16,6 +16,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Custom Scrollbar*/
 ::-webkit-scrollbar {
   width: 4px;
 }
