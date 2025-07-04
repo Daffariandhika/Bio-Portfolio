@@ -66,7 +66,7 @@ export const Footer = styled.div`
 export const Issuer = styled.span`
   font-family: "Orbitron", sans-serif;
   font-weight: 600;
-  color: #8b5cf6;
+  color: #a5b4fc;
 `;
 
 export const PopUp = {

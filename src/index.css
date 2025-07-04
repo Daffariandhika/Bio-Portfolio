@@ -42,7 +42,8 @@ body {
 .Orb {
   position: absolute;
   top: -120px;
-  left: 42%;
+  left: 41.1%;
+  transform: translate(-50%, -50%);
   width: 70rem;
   height: 70rem;
   background: radial-gradient(circle at 50% 50%,

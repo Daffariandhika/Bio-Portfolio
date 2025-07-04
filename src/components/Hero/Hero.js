@@ -17,6 +17,7 @@ import Lottie from "lottie-react";
 import astronaut from "../../Assets/Astronaut.json";
 
 const MotionLeft = motion(HeroLeft);
+const MotionRight = motion(HeroRight);
 
 function Hero() {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,16 +85,19 @@ function Hero() {
               />
             }
           </MotionLeft>
-          <HeroRight>
-            <ScrollAnimation animateIn="fadeIn">
+          <MotionRight
+            variants={PopUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
+          >
               <Lottie
                 animationData={astronaut}
                 loop={true}
                 autoplay={true}
                 style={{ height: "320px", width: "auto", scale: "1.3" }}
               />
-            </ScrollAnimation>
-          </HeroRight>
+          </MotionRight>
         </HeroWrapper>
         {showScrollDown && <ScrollAnimation animateIn="flipInX" offset={0}>
           <ScrollDown to="projects" id="scrollDown">

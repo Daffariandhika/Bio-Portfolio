@@ -172,7 +172,7 @@ export const CertificateList = [
     title: "Node.js Basic",
     issuer: "HackerRank",
     date: "June 2025",
-    image: "/certificate/Nodejs.png",
+    image: "/certificate/NodeJs.png",
     link: "https://www.hackerrank.com/certificates/iframe/e621ecef7bba",
     description: "Solid foundation in Node.js, modules, event loop, and server side logic.",
   },

@@ -1,27 +1,27 @@
 import styled from 'styled-components';
 import Lottie from "lottie-react";
-import astronaut from "../Assets/Ast.json";
+import Orbiton from "../Assets/Rotating.json";
 
-const LottieWrapper = styled.div`
+const OrbitWrapper = styled.div`
   position: absolute;
-  bottom: -520px;
+  top: -50px;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 480px;
-  height: 480px;
+  width: 1000px;
+  height: 1000px;
   pointer-events: none;
   z-index: -1;
   mix-blend-mode: screen;
 `;
 
-export const Lotties = () => {
+export const Orbit = () => {
   return (
-    <LottieWrapper>
+    <OrbitWrapper>
       <Lottie
-        animationData={astronaut}
+        animationData={Orbiton}
         loop={true}
         autoplay={true}
       />
-    </LottieWrapper>
+    </OrbitWrapper>
   )
 }

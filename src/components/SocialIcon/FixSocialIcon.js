@@ -12,7 +12,7 @@ const StyledLinkedinIcon = styled(FaLinkedin)`
 const StyledGithubIcon = styled(FaGithub)`
   transition: color 0.3s;
   &:hover {
-    color: #fff;
+    color: #000000;
   }
 `;
 
