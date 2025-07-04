@@ -2,8 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { Link as LinkScroll } from "react-scroll";
 
 export const HeroContainer = styled.div`
-  padding-bottom: 2rem;
-  padding-top: 4rem;
+  margin-bottom: 5rem;
   padding-right: 1rem;
   padding-left: 1rem;
   margin-right: auto;
@@ -19,9 +18,11 @@ export const HeroContainer = styled.div`
   }
   @media (min-width: 992px) {
     max-width: 960px;
+      padding-top: 4rem;
   }
   @media (min-width: 1200px) {
     max-width: 1000px;
+      padding-top: 4rem;
   }
 `;
 
@@ -47,11 +48,12 @@ export const HeroLeft = styled.div`
     color: #f6f6f6;
     opacity: 0.98;
     font-weight: 400;
+    font-family: "Orbitron", sans-serif;
   }
 
   h5 {
-    font-size: 1.6rem;
-    color: rgb(119, 119, 121);
+    font-size: 1.2rem;
+    color: #a5b4fc;
     margin-bottom: 1rem;
     font-weight: 400;
   }
@@ -65,7 +67,7 @@ export const HeroLeft = styled.div`
   @media screen and (max-width: 992px) {
     text-align: center;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: -2rem;
 
     h5 {
       min-height: 5rem;
@@ -79,8 +81,9 @@ export const HeroRight = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 300px;
+  height: 320px;
   width: auto;
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.7));
 `;
 
 const ScrollAnimation = keyframes`
@@ -125,3 +128,22 @@ export const ScrollLink = styled.div`
     margin-left: 6px;
   }
 `;
+
+export const PopUp = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+    scale: 0.9,
+    rotateX: -5,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotateX: 0,
+    transition: {
+      duration: 0.65,
+      ease: [0.33, 1, 0.68, 1],
+    },
+  },
+};

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const ContactWrapper = styled.div`
-  margin: 5rem 0;
+  margin-bottom: 5rem;
 `;
 
 export const Email = styled.div`
@@ -28,6 +28,7 @@ export const Email = styled.div`
       font-size: 1.25rem;
     }
   }
+    
   @media (min-width: 992px) {
     span {
       font-size: 1.5rem;

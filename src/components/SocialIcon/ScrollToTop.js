@@ -8,15 +8,7 @@ const StyledIconButton = styled(IconButton)`
     bottom: 20px;
     right: 20px;
     color: white;
-    padding: 10px;
-`
-
-const StyledArrowIcon = styled(MdKeyboardArrowUp)`
-    background-color: #007bff;
-    border-radius: 50%;
-    padding: 5px;
-    box-shadow: 0px 4px 20px rgba(160, 170, 180, 0.6);
-`
+`;
 
 function ScrollToTop() {
     const [open, setOpen] = React.useState(false);
@@ -39,8 +31,8 @@ function ScrollToTop() {
     return (
         shouldRender &&
         <Tooltip title='Scroll to top' placement='top' open={open} onOpen={() => setOpen(true)} onClose={() => setOpen(false)}>
-            <StyledIconButton size='large' aria-label='scroll to top' onClick={handleClick} >
-                <StyledArrowIcon fontSize={40} />
+            <StyledIconButton className='PrimaryBtn' size='large' aria-label='scroll to top' onClick={handleClick} >
+                <MdKeyboardArrowUp fontSize={40} />
             </StyledIconButton>
         </Tooltip>
     )

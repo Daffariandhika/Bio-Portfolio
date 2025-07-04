@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import Header from "../Header/Header";
 import {
@@ -6,12 +6,17 @@ import {
   HeroWrapper,
   HeroLeft,
   HeroRight,
-  Image,
   ScrollDown,
   ScrollLink,
+  PopUp
 } from "./HeroElements";
 import { TypeAnimation } from 'react-type-animation';
 import ScrollAnimation from "react-animate-on-scroll";
+import { motion } from 'framer-motion';
+import Lottie from "lottie-react";
+import astronaut from "../../Assets/Astronaut.json";
+
+const MotionLeft = motion(HeroLeft);
 
 function Hero() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,76 +32,79 @@ function Hero() {
       <Header toggle={toggle} />
       <HeroContainer>
         <HeroWrapper>
-          <HeroLeft>
-            <ScrollAnimation animateIn="fadeIn" >
+          <MotionLeft
+            variants={PopUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
+          >
+            <TypeAnimation
+              cursor={false}
+              sequence={[
+                "Daffa Riandhika",
+                () => setShowSubtitle(true)
+              ]}
+              speed={{ type: "keyStrokeDelayInMs", value: 130 }}
+              wrapper="h1"
+              repeat={0}
+            />
+            {showSubtitle &&
               <TypeAnimation
-                cursor={false}
+                cursor={true}
                 sequence={[
-                  'I\'m Daffa Riandhika.',
-                  () => setShowSubtitle(true)
+                  800,
+                  "Don’t ask my name, it’s sculpted up there.",
+                  1000,
+                  "I code and fix broken shit.",
+                  1000,
+                  "I devour precision, perfection, and detail.",
+                  1000,
+                  "Just so you know, I’m not the 'nice' kind of person.",
+                  1000,
+                  "You really wanna be friends with someone cursed with LLI?",
+                  1000,
+                  "But still... you’re here. So... welcome, I guess.",
+                  1000,
+                  "Take a look. Touch nothing.",
+                  1000,
+                  "Projects? Sure. They're sharp, not pretty.",
+                  1000,
+                  () => setShowScrollDown(true),
+                  1000,
+                  "Don’t follow me. You won’t like where this leads.",
+                  1000,
+                  "Still here?",
+                  1000,
+                  "Good. Welcome to the abyss.",
                 ]}
-                speed={{ type: "keyStrokeDelayInMs", value: 150 }}
-                wrapper="h1"
-                repeat={0}
+                speed={45}
+                deletionSpeed={55}
+                wrapper="h5"
+                repeat={Infinity}
               />
-              {showSubtitle &&
-                <TypeAnimation
-                  cursor={true}
-                  sequence={[
-                    500,
-                    'Hey there! my name is Muhammad Daffa Riandhika.',
-                    1000,
-                    'i Have alot of hobbies.',
-                    1000,
-                    "One of them? Coding!.",
-                    1000,
-                    "What's my other hobbies? You need to find out",
-                    1000,
-                    'Also, some say I’m a... cool guy?',
-                    1000,
-                    "Well, I’ll let you decide that.",
-                    1000,
-                    "Oh yea, and I’ve got projects down below!",
-                    1000,
-                    "You can scroll to check them out!",
-                    300,
-                    () => setShowScrollDown(true),
-                    1000,
-                    "Seriously, they’re pretty cool. Go ahead!",
-                    1000,
-                    "Alright, restarting the loop now…",
-                    1000,
-                    "See ya!",
-                    500,
-                  ]}
-                  speed={50}
-                  deletionSpeed={65}
-                  wrapper="h5"
-                  repeat={Infinity}
-                />
-              }
-            </ScrollAnimation>
-
-          </HeroLeft>
+            }
+          </MotionLeft>
           <HeroRight>
             <ScrollAnimation animateIn="fadeIn">
-              <Image
-                src="/DaffaRiandhika.png"
-                alt="Daffa Riandhika"
+              <Lottie
+                animationData={astronaut}
+                loop={true}
+                autoplay={true}
+                style={{ height: "320px", width: "auto", scale: "1.3" }}
               />
             </ScrollAnimation>
           </HeroRight>
         </HeroWrapper>
-        {showScrollDown &&<ScrollAnimation animateIn="flipInX" offset={0}>
-        <ScrollDown to="projects" id="scrollDown">
-          <ScrollLink>
-            Scroll down
-            <img
-              src="/scroll-down.svg"
-              alt="scroll-down"
-            />
-          </ScrollLink>
-        </ScrollDown>
+        {showScrollDown && <ScrollAnimation animateIn="flipInX" offset={0}>
+          <ScrollDown to="projects" id="scrollDown">
+            <ScrollLink>
+              Scroll down
+              <img
+                src="/scroll-down.svg"
+                alt="scroll-down"
+              />
+            </ScrollLink>
+          </ScrollDown>
         </ScrollAnimation>}
       </HeroContainer>
     </main>

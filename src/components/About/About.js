@@ -1,62 +1,49 @@
-import React from "react";
-import { stackList } from "../../data/ProjectData";
-import {
-  Image,
-  Technologies,
-  Tech,
-  TechImg,
-  TechName,
-  ContactWrapper,
-} from "./AboutElements";
+import { AboutWrapper } from "./AboutElements";
 import ScrollAnimation from "react-animate-on-scroll";
+import Quote from "./Quote";
+
 function About() {
   return (
-    <ContactWrapper id="about">
+    <AboutWrapper id="about">
       <div className="Container">
         <div className="SectionTitle">About Me</div>
         <div className="BigCard">
-        <ScrollAnimation animateIn="fadeInLeft">
-          <Image
-            src="/DaffaRiandhika.png"
-            alt="Daffa Riandhika"
-          />
-        </ScrollAnimation>
           <div className="AboutBio">
-            <ScrollAnimation animateIn="fadeInLeft">
-            Halo! saya <strong>Muhammad Daffa Riandhika</strong>, Saya berasal dari Indonesia. Selama tiga tahun terakhir, Selain antusias dalam bidang teknologi, saya juga tertarik dalam dunia seni, khususnya musik dan menggambar. Gabungan antara teknologi dan seni selalu memberi saya perspektif yang segar dan inovatif dalam menghadapi tantangan di dunia digital.
+            <ScrollAnimation animateIn="fadeIn">
+              <p style={{
+                fontStyle: "italic",
+                color: "#a5b4fc",
+                fontSize: "0.9rem",
+                marginBottom: "1.5rem",
+                textAlign: "center",
+                letterSpacing: "0.3px"
+              }}>
+                Not written to inspire, impress, or appease.
+              </p>
             </ScrollAnimation>
 
-            <br /><br />
-            
             <ScrollAnimation animateIn="fadeInLeft">
-            Rasa ingin tahu saya tetang teknologi membawa saya untuk memilih Sistem Informasi sebagai bidang studi di Universitas Gunadarma. Salah satu momen paling membanggakan saya adalah meraih juara 1 dalam kompetisi artikel ilmiah USB di tahun pertama saya.
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I’m a self taught developer who thrives in solitude and gets shit done. I learn by breaking things until they work, not by listening to someone drone on about it. Theory? Were you even paying attention? I’m addicted to precision, obsessed with perfection, and wired to dissect detail. They call it low latent inhibition, I call it never missing a single goddamn thing. I’m not special. I’m not a beautiful or unique snowflake, I’m the same decaying organic matter as everything else.
             </ScrollAnimation>
 
-            <br /><br />
+            <br />
 
             <ScrollAnimation animateIn="fadeInLeft">
-            Saya tertarik dalam pengembangan web, terutama ketika mempelajari HTML, Javascript dan CSS, Sampai saat ini saya terus mengasah kemampuan ini. Selain itu, sesekali saya ikut dalam kontribusi pada proyek open-source agar dapat meningkatkan kemampuan coding dan mengajarkan nilai kolaborasi dalam komunitas developer dalam diri saya.
-              <div className="tagline2">
-                Soft Skill:
-              </div>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creativity isn’t a spark, it’s the Sandman whispering nightmares into your ear, while logic is the One keeping you shackled to the bed, constantly reminding you that Nothing Else Matters but the cold, hard, inescapable truth of your impending doom. I’d rather bleed on the paper than cheat my way out. I’ll take an “E” with clean hands before I stain them with comfort and lies. Dignity isn't currency. My integrity isn't for barter. Because What we do in life, echoes in eternity.
             </ScrollAnimation>
-            
 
-            <Technologies>
-              {stackList.map((stack, index) => (
-                <ScrollAnimation animateIn="fadeInLeft" key={index}>
-                  <Tech key={index} className="tech">
-                    <TechImg src={stack.img} alt={stack.name} />
-                    <TechName>{stack.name}</TechName>
-                  </Tech>
-                </ScrollAnimation>
-              ))}
-            </Technologies>
+            <br />
+
+            <ScrollAnimation animateIn="fadeInLeft">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I don’t usually explain myself, but if this reads like a manifesto? Good. If it feels frightening, that’s because it’s a path toward enlightenment and Only after disaster can we be resurrected. If it seems like I don’t care, it’s because I care too much about the right things. What you see isn’t branding, you’re looking at the side effects of insanity and a refusal to fake a damn thing. I'm not here to find boundaries. If you're looking for a buddy, go to a goddamn playground. If you're looking for clean code wrapped in madness, welcome to the abyss.
+            </ScrollAnimation>
+
+            <br />
+            <Quote />
           </div>
-
         </div>
       </div>
-    </ContactWrapper>
+    </AboutWrapper>
   );
 }
 

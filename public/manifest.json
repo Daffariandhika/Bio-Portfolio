@@ -1,15 +1,15 @@
 {
-  "short_name": "Daffa Riandhika",
-  "name": "Daffa Riandhika",
+  "short_name": "Riandhika",
+  "name": "Riandhika",
   "icons": [
     {
-      "src": "logoskull.png",
+      "src": "react.svg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "type": "icon/svg"
     },
     {
-      "src": "logoskull.png",
-      "type": "image/png",
+      "src": "react.svg",
+      "type": "icon/svg",
       "sizes": "192x192"
     }
   ],

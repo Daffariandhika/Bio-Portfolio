@@ -4,7 +4,14 @@ import styled from "@emotion/styled";
 import { Link as ScrollLink } from "react-scroll";
 
 const SiderBar = styled.div`
-  background: #151418;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0.06);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  -webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -28,6 +35,7 @@ const CloseIcon = styled(FaTimes)`
   top: 2rem;
   cursor: pointer;
 `;
+
 export const NavMenu = styled.div`
   display: flex;
   justify-content: center;
@@ -45,7 +53,7 @@ export const NavLink = styled(ScrollLink)`
   font-size: 1.7rem;
 
   &:hover {
-    color: rgb(119, 119, 121);
+    color: #a5b4fc;
   }
 `;
 
@@ -64,6 +72,20 @@ function Dropdown({ isOpen, toggle }) {
         <NavLink
           onClick={toggle}
           className="menu-item"
+          to="about"
+        >
+          About
+        </NavLink>
+        <NavLink
+          onClick={toggle}
+          className="menu-item"
+          to="tech"
+        >
+          Tech
+        </NavLink>
+        <NavLink
+          onClick={toggle}
+          className="menu-item"
           to="projects"
         >
           Projects
@@ -71,9 +93,9 @@ function Dropdown({ isOpen, toggle }) {
         <NavLink
           onClick={toggle}
           className="menu-item"
-          to="about"
+          to="certificate"
         >
-          About
+          Certificate
         </NavLink>
         <NavLink
           onClick={toggle}

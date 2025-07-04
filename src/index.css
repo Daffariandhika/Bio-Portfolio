@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
 *,
 *::before,
 *::after {
@@ -7,16 +9,75 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #fafaff;
-  font-weight: 400;
   overflow-x: hidden;
+  position: relative;
+  font-weight: 400;
 }
 
-/* Custom Scrollbar*/
+/* ------------------------------------ Square Pattern */
+.GridPattern {
+  background-image: linear-gradient(to right, #1e1b4b 1px, transparent 1px), linear-gradient(to bottom, #1e1b4b 1px, transparent 1px);
+  background-color: #000000;
+  background-size: 32px 32px;
+  overflow: hidden;
+  position: fixed;
+  z-index: -10;
+  inset: 0;
+}
+
+/* ------------------------------------ Overlay Gradient */
+.OverlayColor {
+  background-color: #020617;
+  position: absolute;
+  opacity: 0.95;
+  inset: 0;
+}
+
+/* ------------------------------------ Orb */
+.Orb {
+  position: absolute;
+  top: -120px;
+  left: 42%;
+  width: 70rem;
+  height: 70rem;
+  background: radial-gradient(circle at 50% 50%,
+      #e9d5ff 0%,
+      #c084fc 20%,
+      #9333ea 45%,
+      #4c1d95 70%,
+      #1e1b4b 100%);
+  opacity: 0.4;
+  border-radius: 100%;
+  filter: blur(60px) saturate(120%);
+  pointer-events: none;
+  z-index: 0;
+  scale: 0.8;
+  animation: pulseOrbGalaxy 12s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes pulseOrbGalaxy {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(0.9);
+    filter: blur(80px) saturate(150%);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(100px) saturate(180%);
+  }
+}
+
+
+
+/* ------------------------------------ Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -42,20 +103,11 @@ body {
   overflow-y: auto;
 }
 
-main {
-  background: #151418;
-  background-image: url('../public/blob-haikei.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-}
-
 a {
   text-decoration: none;
   color: inherit;
   background-color: transparent;
   transition: 0.2s ease-in;
-
 }
 
 ul,
@@ -93,45 +145,10 @@ video {
   max-width: 100%;
 }
 
-.btn {
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  font-weight: 400;
-  outline: none;
-}
-
-.btn-shadow{
-  box-shadow: 0px 2px 5px rgba(160, 170, 180, 0.6);
-
-}
-
-.btn-shadow:hover{
-  box-shadow: 0px 3px 8px rgba(160, 170, 180, 0.9);
-}
-
-.PrimaryBtn {
-  padding: 12px 20px;
-  border: none;
-  background: rgb(57, 134, 250);
-  color: #f6f6f6;
-}
-
-.SecondaryBtn{
-  padding: 10px 18px;
-  color: #ffff;
-  margin-right: 1rem;
-  background-color: black;
-}
-
-.PrimaryBtn:hover {
-  transition: all 0.3s ease-in-out;
-  background: rgb(18, 111, 250);
-}
-
-.SecondaryBtn:hover {
-  transition: all 0.3s ease-in-out;
-  background: #0C0C0C;
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: auto;
 }
 
 .Container {
@@ -144,46 +161,295 @@ video {
 }
 
 .BigCard {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  -webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding: 3rem 2rem;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  background: #fff;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  position: relative;
+  overflow: hidden;
 }
 
-.AboutBio{
+.AboutBio {
   text-align: justify;
   max-width: 750px;
   margin: 0 auto;
-  color: #151418;
+  color: #fcfcfc;
   line-height: 1.6;
-}
-
-.tagline2 {
-  text-align: left;
-  max-width: 650px;
-  margin: 0;
-  color: #151418;
-  line-height: 1.6;
-}
-
-.tagline2 {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
 }
 
 .SectionTitle {
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
   font-size: 28px;
-  color: #151418;
+  color: #f1f1f1;
   font-weight: 700;
   margin-bottom: 3.5rem;
 }
-.ProjectWrapper {
-  margin-top: -1rem;
+
+/* ------------------------------------ Button */
+.PrimaryBtn {
+  --adv-btn-bg-start: #8a2be2;
+  --adv-btn-bg-end: #4a00e0;
+  --adv-btn-text-color: #f0f0f0;
+  --adv-glow-color: rgba(138, 43, 226, 0.7);
+  --adv-strong-glow-color: rgba(74, 0, 224, 0.5);
+  --adv-shadow-color-light: rgba(0, 0, 0, 0.3);
+  --adv-shadow-color-dark: rgba(0, 0, 0, 0.5);
+  --adv-shine-color: rgba(255, 255, 255, 0.7);
+  --adv-transition-base: 0.25s;
+  --adv-transition-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 1.1em;
+}
+
+.PrimaryBtn {
+  font-family: "Orbitron", sans-serif;
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.4em;
+  background: linear-gradient(60deg,
+      var(--adv-btn-bg-start),
+      var(--adv-btn-bg-end));
+  background-size: 200% 200%;
+  background-position: 50% 50%;
+  color: var(--adv-btn-text-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  z-index: 1;
+  backface-visibility: hidden;
+  box-shadow:
+    0em 0.2em 0.4em var(--adv-shadow-color-light),
+    0em 0.4em 0.8em var(--adv-shadow-color-dark),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.15);
+  transition:
+    transform var(--adv-transition-base) var(--adv-transition-bounce),
+    box-shadow var(--adv-transition-base) ease-out,
+    background-position 1s ease;
+}
+
+.PrimaryBtn::before,
+.PrimaryBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  z-index: 1;
+  pointer-events: none;
+  transition:
+    opacity 0.4s ease-out,
+    background-position 0.8s ease;
+}
+
+.PrimaryBtn::before {
+  background: linear-gradient(115deg,
+      transparent 25%,
+      var(--adv-shine-color) 50%,
+      transparent 75%);
+  background-size: 250% 100%;
+  background-position: 180% 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.PrimaryBtn:hover {
+  box-shadow:
+    0em 0.25em 0.5em var(--adv-shadow-color-light),
+    0em 0.5em 1.25em var(--adv-shadow-color-dark),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.15),
+    0 0 1.5em var(--adv-glow-color),
+    0 0 3em var(--adv-strong-glow-color);
+  animation: bg-pan 3s linear infinite;
+}
+
+.PrimaryBtn:hover::before {
+  background-position: -80% 0;
+}
+
+.PrimaryBtn:active {
+  transform: scale(0.95, 0.92);
+  box-shadow:
+    0em 0.1em 0.2em var(--adv-shadow-color-light),
+    0em 0.2em 0.4em var(--adv-shadow-color-dark),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.1),
+    0 0 1em var(--adv-glow-color),
+    0 0 2em var(--adv-strong-glow-color);
+  animation: none;
+}
+
+.PrimaryBtn:hover::before {
+  background: none;
+  opacity: 1;
+  content: attr(data-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: inherit;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  font-family: inherit;
+  text-shadow: none;
+  z-index: 3;
+}
+
+.PrimaryBtn:focus-visible {
+  box-shadow:
+    0em 0.25em 0.5em var(--adv-shadow-color-light),
+    0em 0.5em 1.25em var(--adv-shadow-color-dark),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.15),
+    0 0 1.5em var(--adv-glow-color);
+}
+
+.btn-github {
+  --adv-btn-bg-start: #0a0a0a;
+  --adv-btn-bg-end: #000000;
+  --adv-btn-text-color: #f0f0f0;
+  --adv-glow-color: rgba(0, 0, 0, 0.7);
+  --adv-strong-glow-color: rgba(0, 0, 0, 0.5);
+  --adv-shadow-color-light: rgba(0, 0, 0, 0.3);
+  --adv-shadow-color-dark: rgba(0, 0, 0, 0.5);
+  --adv-shine-color: rgba(255, 255, 255, 0.7);
+  --adv-transition-base: 0.25s;
+  --adv-transition-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 1.1em;
+}
+
+.btn-github {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.4em;
+  background: linear-gradient(60deg,
+      var(--adv-btn-bg-start),
+      var(--adv-btn-bg-end));
+  background-size: 200% 200%;
+  background-position: 50% 50%;
+  color: var(--adv-btn-text-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  z-index: 1;
+  backface-visibility: hidden;
+  box-shadow:
+    0em 0.2em 0.4em var(--adv-shadow-color-light),
+    0em 0.4em 0.8em var(--adv-shadow-color-dark),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.15);
+  transition:
+    transform var(--adv-transition-base) var(--adv-transition-bounce),
+    box-shadow var(--adv-transition-base) ease-out,
+    background-position 1s ease;
+}
+
+.btn-github::before,
+.btn-github::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  z-index: 1;
+  pointer-events: none;
+  transition:
+    opacity 0.4s ease-out,
+    background-position 0.8s ease;
+}
+
+.btn-github::before {
+  background: linear-gradient(115deg,
+      transparent 25%,
+      var(--adv-shine-color) 50%,
+      transparent 75%);
+  background-size: 250% 100%;
+  background-position: 180% 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.btn-github:hover {
+  box-shadow:
+    0em 0.25em 0.5em var(--adv-shadow-color-light),
+    0em 0.5em 1.25em var(--adv-shadow-color-dark),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.15),
+    0 0 1.5em var(--adv-glow-color),
+    0 0 3em var(--adv-strong-glow-color);
+  animation: bg-pan 3s linear infinite;
+}
+
+.btn-github:hover::before {
+  background-position: -80% 0;
+}
+
+.btn-github:active {
+  transform: scale(0.95, 0.92);
+  box-shadow:
+    0em 0.1em 0.2em var(--adv-shadow-color-light),
+    0em 0.2em 0.4em var(--adv-shadow-color-dark),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.1),
+    0 0 1em var(--adv-glow-color),
+    0 0 2em var(--adv-strong-glow-color);
+  animation: none;
+}
+
+.btn-github:hover::before {
+  background: none;
+  opacity: 1;
+  content: attr(data-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: inherit;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  font-family: inherit;
+  text-shadow: none;
+  z-index: 3;
+  ;
+}
+
+.btn-github:focus-visible {
+  box-shadow:
+    0em 0.25em 0.5em var(--adv-shadow-color-light),
+    0em 0.5em 1.25em var(--adv-shadow-color-dark),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.15),
+    0 0 1.5em var(--adv-glow-color);
+}
+
+@keyframes bg-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* ------------------------------------ Media for Container */

@@ -12,16 +12,25 @@ export const Nav = styled.nav`
 `;
 
 export const NavLink = styled(ScrollLink)`
-  color: rgb(119, 119, 121);
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
   display: flex;
   font-size: 1.2rem;
+  font-weight: 800;
   align-items: center;
   height: 100%;
   cursor: pointer;
   &:hover {
-    color: #f6f6f6;
+    color: #a5b4fc;
+  }
+  @media screen and (max-width: 992px) {
+    font-size: 0.85rem;
+    font-weight: 800;
   }
 `;
+
 export const Logo = styled('div')`
   img {
     width: 47px;

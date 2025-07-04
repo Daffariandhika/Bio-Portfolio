@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ContactWrapper, Email } from "./ContactElements";
 import { MdContentCopy } from "react-icons/md";
 import { IconButton, Tooltip } from "@mui/material";
 import Zoom from '@mui/material/Zoom';
-
 import ScrollAnimation from "react-animate-on-scroll";
+
 function Contact() {
   const [showTooltip, setShowTooltip] = useState(false);
   const copyToClipboard = () => {
@@ -17,13 +17,12 @@ function Contact() {
 
   return (
     <ContactWrapper id="contact">
-
       <div className="Container">
         <div className="SectionTitle">Contact</div>
-        <ScrollAnimation animateIn="fadeIn" >
-          <div className="BigCard">
+        <div className="BigCard">
+          <ScrollAnimation animateIn="fadeIn" >
             <Email>
-              <div style={{ display: 'flex', alignItems: 'center', columnGap: '20px', rowGap: '10px', flexWrap: 'wrap', justifyContent: 'center' }} >
+              <div style={{ display: 'flex', alignItems: 'center', columnGap: '20px', rowGap: '10px', flexWrap: 'wrap', justifyContent: 'center', color: "#fefefe" }} >
                 <span>muhammaddaffariandhika@gmail.com</span>
                 <Tooltip
                   PopperProps={{
@@ -38,13 +37,13 @@ function Contact() {
                   disableTouchListener
                   placement="bottom"
                 >
-                  <IconButton  onClick={copyToClipboard} >
-                    <MdContentCopy size={25} style={{ cursor: 'pointer', color: "#151418" }}/>
+                  <IconButton onClick={copyToClipboard} >
+                    <MdContentCopy size={25} style={{ cursor: 'pointer', color: "#fefefe" }} />
                   </IconButton>
                 </Tooltip>
               </div>
               <a
-                className="btn PrimaryBtn btn-shadow"
+                className="PrimaryBtn"
                 href="mailto:muhammaddaffariandhika@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -52,9 +51,8 @@ function Contact() {
                 Send Email
               </a>
             </Email>
-          </div>
-        </ScrollAnimation>
-
+          </ScrollAnimation>
+        </div>
       </div>
     </ContactWrapper>
   );

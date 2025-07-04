@@ -1,28 +1,19 @@
-import React from "react";
 import styled from "@emotion/styled";
 
-const FooterSection = styled.div`
-  background-image: url(/footer_wave.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
+const FooterSection = styled.footer`
   width: 100%;
-  height: 250px;
-  position: relative;
-
-  span {
-    position: absolute;
-    bottom: 4rem;
-    color: #fff;
-
-    a {
-      text-decoration: underline;
-    }
-  }
+  padding: 2rem 1rem;
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
 `;
+
 function Footer() {
   return (
     <FooterSection>
-      <div className="Container"/>
+      © {new Date().getFullYear()} Daffa Riandhika.
     </FooterSection>
   );
 }

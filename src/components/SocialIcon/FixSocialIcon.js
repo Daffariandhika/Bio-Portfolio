@@ -1,7 +1,20 @@
-import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import styled from "@emotion/styled";
-import ScrollAnimation from "react-animate-on-scroll";
+import { motion } from "framer-motion";
+
+const StyledLinkedinIcon = styled(FaLinkedin)`
+  transition: color 0.3s;
+  &:hover {
+    color: #0a66c2;
+  }
+`;
+
+const StyledGithubIcon = styled(FaGithub)`
+  transition: color 0.3s;
+  &:hover {
+    color: #fff;
+  }
+`;
 
 const SocialContainer = styled.div`
   position: fixed;
@@ -19,30 +32,20 @@ const SocialContainer = styled.div`
 
   a {
     font-size: 2.3rem;
-    color: rgb(119, 119, 121);
-    &:hover {
-      color: rgb(57, 134, 250);
-    }
+    color: #a5b4fc;
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1080px) {
     margin-top: 2rem;
     position: relative;
     top: 0;
     left: 0;
+
     ul {
       display: flex;
       justify-content: center;
       align-items: center;
       list-style: none;
-    }
-
-    a {
-      font-size: 2.5rem;
-      color: #151418;
-      &:hover {
-        color: rgb(57, 134, 250);
-      }
     }
 
     .item + .item {
@@ -51,18 +54,24 @@ const SocialContainer = styled.div`
     }
   }
 `;
+
 function FixSocialIcon() {
   return (
     <SocialContainer>
-      <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <ul>
           <li className="item">
             <a
-              href="https://www.linkedin.com/in/daffariandhika/"
+              href="https://www.linkedin.com/in/daffariandhika"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin />
+              <StyledLinkedinIcon />
             </a>
           </li>
           <li className="item">
@@ -71,11 +80,11 @@ function FixSocialIcon() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub />
+              <StyledGithubIcon />
             </a>
           </li>
         </ul>
-      </ScrollAnimation>
+      </motion.div>
     </SocialContainer>
   );
 }
