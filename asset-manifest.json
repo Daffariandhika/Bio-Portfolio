@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Daffariandhika/Bio-Portfolio/static/css/main.442f17a7.css",
+    "main.js": "/Daffariandhika/Bio-Portfolio/static/js/main.f0337fbf.js",
+    "index.html": "/Daffariandhika/Bio-Portfolio/index.html",
+    "main.442f17a7.css.map": "/Daffariandhika/Bio-Portfolio/static/css/main.442f17a7.css.map",
+    "main.f0337fbf.js.map": "/Daffariandhika/Bio-Portfolio/static/js/main.f0337fbf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.442f17a7.css",
+    "static/js/main.f0337fbf.js"
+  ]
+}
