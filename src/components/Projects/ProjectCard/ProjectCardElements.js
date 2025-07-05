@@ -36,7 +36,7 @@ export const CardLeft = styled.div`
 
   img {
     width: 100%;
-    height: 220px;
+    height: auto;
     border-radius: 12px;
     object-fit: contain;
     object-position: left center;
