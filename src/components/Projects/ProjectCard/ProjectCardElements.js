@@ -38,9 +38,8 @@ export const CardLeft = styled.div`
     width: 100%;
     height: 220px;
     border-radius: 12px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: left center;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease;
   }
 `;
