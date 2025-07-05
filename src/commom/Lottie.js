@@ -4,13 +4,14 @@ import astronaut from "../Assets/Ast.json";
 
 const LottieWrapper = styled.div`
   position: absolute;
-  bottom: -520px;
+  top: -60px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 480px;
   height: 480px;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
+  opacity: 0.4;
   mix-blend-mode: screen;
 `;
 
