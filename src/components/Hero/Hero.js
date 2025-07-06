@@ -8,16 +8,11 @@ import {
   HeroRight,
   ScrollDown,
   ScrollLink,
-  PopUp
 } from "./HeroElements";
 import { TypeAnimation } from 'react-type-animation';
 import ScrollAnimation from "react-animate-on-scroll";
-import { motion } from 'framer-motion';
 import Lottie from "lottie-react";
 import astronaut from "../../Assets/Astronaut.json";
-
-const MotionLeft = motion(HeroLeft);
-const MotionRight = motion(HeroRight);
 
 function Hero() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,12 +28,7 @@ function Hero() {
       <Header toggle={toggle} />
       <HeroContainer>
         <HeroWrapper>
-          <MotionLeft
-            variants={PopUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.2 }}
-          >
+          <HeroLeft>
             <TypeAnimation
               cursor={false}
               sequence={[
@@ -84,20 +74,15 @@ function Hero() {
                 repeat={Infinity}
               />
             }
-          </MotionLeft>
-          <MotionRight
-            variants={PopUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.2 }}
-          >
+          </HeroLeft>
+          <HeroRight>
               <Lottie
                 animationData={astronaut}
                 loop={true}
                 autoplay={true}
                 style={{ height: "320px", width: "auto", scale: "1.3" }}
               />
-          </MotionRight>
+          </HeroRight>
         </HeroWrapper>
         {showScrollDown && <ScrollAnimation animateIn="flipInX" offset={0}>
           <ScrollDown to="projects" id="scrollDown">

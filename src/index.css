@@ -42,7 +42,7 @@ body {
 .Orb {
   position: absolute;
   top: -120px;
-  left: 41.1%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 70rem;
   height: 70rem;
@@ -52,16 +52,15 @@ body {
       #9333ea 45%,
       #4c1d95 70%,
       #1e1b4b 100%);
-  opacity: 0.4;
+  opacity: 0.8;
   border-radius: 100%;
-  filter: blur(60px) saturate(120%);
+    filter: blur(100px) saturate(180%);
   pointer-events: none;
   z-index: 0;
-  scale: 0.8;
-  animation: pulseOrbGalaxy 12s ease-in-out infinite;
   mix-blend-mode: screen;
 }
 
+/*
 @keyframes pulseOrbGalaxy {
   0%,
   100% {
@@ -75,6 +74,7 @@ body {
     filter: blur(100px) saturate(180%);
   }
 }
+*/
 
 
 

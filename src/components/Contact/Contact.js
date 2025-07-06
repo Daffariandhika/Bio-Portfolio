@@ -3,7 +3,6 @@ import { ContactWrapper, Email } from "./ContactElements";
 import { MdContentCopy } from "react-icons/md";
 import { IconButton, Tooltip } from "@mui/material";
 import Zoom from '@mui/material/Zoom';
-import ScrollAnimation from "react-animate-on-scroll";
 
 function Contact() {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -20,7 +19,6 @@ function Contact() {
       <div className="Container">
         <div className="SectionTitle">Contact</div>
         <div className="BigCard">
-          <ScrollAnimation animateIn="fadeIn" >
             <Email>
               <div style={{ display: 'flex', alignItems: 'center', columnGap: '20px', rowGap: '10px', flexWrap: 'wrap', justifyContent: 'center', color: "#fefefe" }} >
                 <span>muhammaddaffariandhika@gmail.com</span>
@@ -51,7 +49,6 @@ function Contact() {
                 Send Email
               </a>
             </Email>
-          </ScrollAnimation>
         </div>
       </div>
     </ContactWrapper>

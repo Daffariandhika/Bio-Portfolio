@@ -6,24 +6,14 @@ import {
   TechCardContainer,
   TechCard,
   BtnGroup,
-  cardVariants,
 } from "./ProjectCardElements";
 import { FaGithub } from "react-icons/fa";
-import { motion } from "framer-motion";
-
-const MotionCard = motion(Card);
 
 function ProjectCard() {
   return (
     <>
       {ProjectList.map((list, index) => (
-        <MotionCard
-          key={index}
-          variants={cardVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
-        >
+        <Card key={index}>
           <CardLeft>
             <img src={list.img} alt={list.name} />
           </CardLeft>
@@ -60,7 +50,7 @@ function ProjectCard() {
               )}
             </BtnGroup>
           </CardRight>
-        </MotionCard>
+        </Card>
       ))}
     </>
   );

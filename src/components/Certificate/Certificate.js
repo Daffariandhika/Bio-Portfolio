@@ -6,16 +6,12 @@ import {
   CardBody,
   Footer,
   Issuer,
-  PopUp,
   BtnContainer,
 } from './CertificateElements';
 import { CertificateList } from "../../data/ProjectData";
-import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-const MotionCard = motion(Card);
 
 function Certificate() {
   return (
@@ -40,13 +36,7 @@ function Certificate() {
         >
           {CertificateList.map((cert, index) => (
             <SwiperSlide key={index}>
-              <MotionCard
-                key={index}
-                variants={PopUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.2 }}
-              >
+              <Card key={index}>
                 <Image src={cert.image} alt={cert.title} />
                 <Title>{cert.title}</Title>
                 <CardBody>{cert.description}</CardBody>
@@ -64,7 +54,7 @@ function Certificate() {
                   <Issuer>{cert.issuer}</Issuer>
                   <span>{cert.date}</span>
                 </Footer>
-              </MotionCard>
+              </Card>
             </SwiperSlide>
           ))}
         </Swiper>

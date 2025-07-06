@@ -1,6 +1,5 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
 
 const StyledLinkedinIcon = styled(FaLinkedin)`
   transition: color 0.3s;
@@ -58,12 +57,6 @@ const SocialContainer = styled.div`
 function FixSocialIcon() {
   return (
     <SocialContainer>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
         <ul>
           <li className="item">
             <a
@@ -84,7 +77,6 @@ function FixSocialIcon() {
             </a>
           </li>
         </ul>
-      </motion.div>
     </SocialContainer>
   );
 }
